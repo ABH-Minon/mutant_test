@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Cancelled</title>
+    <title>Payment Success</title>
 </head>
 <body>
     <h1>Payment Succesful</h1>

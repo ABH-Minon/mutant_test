@@ -89,14 +89,12 @@ class ProductController extends Controller{
     }
 
     public function checkout() {
-        // Update the status of orders to 0 after the purchase
         Order::where('userID', Auth::id())->update(['status' => 0]);
-    
         return response()->json(['message' => 'Checkout completed successfully.']);
     }
 
     public function createCheckoutSession(Request $request) {
-        \Stripe\Stripe::setApiKey('sk_test_51MntetCvBL6iYfWCYWDISZaA1HtVSi4LFsUWKcbocZg1HJdzFqssYo1gLi3wqMsmafFq7LN8pWvAebN1Hl4mSAEh00W0VXCN51'); // Replace with your actual secret key
+        \Stripe\Stripe::setApiKey('sk_test_51MntetCvBL6iYfWCYWDISZaA1HtVSi4LFsUWKcbocZg1HJdzFqssYo1gLi3wqMsmafFq7LN8pWvAebN1Hl4mSAEh00W0VXCN51');
     
         $subtotal = $request->input('subtotal');
 

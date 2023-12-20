@@ -16,6 +16,5 @@
     </form>
     
     <a href="register">Create Account</a>
-    <a href="forgot_password">Forgot Password?</a>
 </body>
 </html>

@@ -29,7 +29,8 @@
     <a href="./personalInfo"><button>View personal information</button></a></li>
     <a href="./newPassword"><button>Change password</button></a></li>
     <a href="cart"><button>Cart</button></a></li>
-    <a href="../"><button>Logout</button></a></li>
+    <a href="{{ route('logout') }}"><button>Logout</button></a>
+    <h2>Product List</h2>
     <form id="buyForm" action="{{ url('/customer/cartProduct') }}" method="post">
         @csrf  
         <table class="product-table">

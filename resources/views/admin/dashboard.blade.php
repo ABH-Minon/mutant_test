@@ -9,7 +9,7 @@
     <div class="buttons">
         <a href="viewUsers"><button>View Users</button></a>
         <a href="viewProducts"><button>View Products</button></a>
-        <a href="../"><button>Logout</button></a>
+        <a href="{{ route('logout') }}"><button>Logout</button></a>
     </div>
 </body>
 

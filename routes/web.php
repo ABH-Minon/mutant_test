@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::get('/register', [UserController::class, 'showRegistrationForm']);
 Route::post('/register', [UserController::class, 'register']);
 
+Route::get('/logout', [Login::class, 'logout'])->name('logout');
 
 //Customer Panel
 Route::get('/customer/dashboard', function () {
@@ -49,7 +50,6 @@ Route::post('/create-checkout-session', [ProductController::class, 'createChecko
 
 Route::get('/customer/paymentSuccess', [ProductController::class, 'paymentSuccess'])->name('paymentSuccess');
 Route::get('/customer/paymentCancel', [ProductController::class, 'paymentCancel'])->name('paymentCancel');
-
 
 
 //Admin Panel

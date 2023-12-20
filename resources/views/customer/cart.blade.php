@@ -31,7 +31,6 @@
             background-color: rgba(0,0,0,0.4);
             padding-top: 60px;
         }
-
         .modal-content {
             background-color: #fefefe;
             margin: 5% auto;
@@ -39,14 +38,12 @@
             border: 1px solid #888;
             width: 80%;
         }
-
         .close {
             color: #aaa;
             float: right;
             font-size: 28px;
             font-weight: bold;
         }
-
         .close:hover,
         .close:focus {
             color: black;
@@ -57,6 +54,7 @@
 </head>
 <body>
     <div>
+        <a href="dashboard"><button>Back to Dashboard</button></a>
         <h2>Your Cart</h2>
         <table>
             <thead>
@@ -117,7 +115,7 @@
 
         function openCheckoutModal() {
             var subtotal = calculateSubtotal();
-            document.getElementById('subtotal').innerText = subtotal;
+            document.getElementById('subtotal').innerText = subtotal.toFixed(2);
             document.getElementById('checkoutModal').style.display = 'block';
         }
 
@@ -144,18 +142,13 @@
                     console.log('XHR Status:', xhr.status);
                     console.log('Response:', xhr.responseText);
                     if (xhr.status === 200) {
-                        // Parse the response to get the Checkout Session URL
                         var sessionUrl = JSON.parse(xhr.responseText).url;
-
-                        // Redirect to the Checkout Session URL
                         window.location.href = sessionUrl;
                     } else {
                         alert('Error: ' + xhr.responseText);
                     }
                 }
             };
-
-            // Send an empty JSON payload since you are not sending any data
             xhr.send(JSON.stringify({ subtotal: subtotal }));
         }
 
