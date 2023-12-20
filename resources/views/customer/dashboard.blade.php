@@ -63,7 +63,6 @@
         function buyProduct(productId, productName, productPrice) {
             var buyButtons = document.querySelectorAll('.buy-button');
 
-            // Disable all buy buttons
             buyButtons.forEach(function(button) {
                 button.disabled = true;
             });
@@ -71,7 +70,6 @@
             var quantity = prompt('Enter quantity for ' + productName + ':', '1');
 
             if (quantity === null) {
-                // Re-enable buttons if the user cancels
                 buyButtons.forEach(function(button) {
                     button.disabled = false;
                 });
@@ -81,8 +79,6 @@
             quantity = parseInt(quantity, 10);
             if (isNaN(quantity) || quantity <= 0) {
                 alert('Please enter a valid positive quantity.');
-
-                // Re-enable buttons if the quantity is invalid
                 buyButtons.forEach(function(button) {
                     button.disabled = false;
                 });
@@ -112,8 +108,6 @@
                     } else {
                         alert('Error: ' + xhr.responseText);
                     }
-
-                    // Re-enable buttons after processing the request
                     buyButtons.forEach(function(button) {
                         button.disabled = false;
                     });
